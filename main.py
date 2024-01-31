@@ -23,7 +23,7 @@ def predict(model, img):
     confidence = round(100 * (np.max(predictions[0])), 2)
     return predicted_class, confidence
 
-model=load_model('1')
+model=load_model('model_50_epochs')
 
 def set_bg_hack(main_bg):
    '''
