@@ -82,7 +82,7 @@ def save_file(img):
 # Web Devlopment
 st.markdown(f'<h1 style="color:black;font-size:64px;">{"Potato Prediction"}</h1>', unsafe_allow_html=True)
 
-input_type=st.selectbox('Type',['Upload from Gallery','Upload by Cammer'])
+input_type=st.selectbox('Type',['Upload from Gallery','Upload by Camer'])
 
 if input_type=='Upload by Cammer':
     uploaded_img = st.camera_input("Take a picture")
