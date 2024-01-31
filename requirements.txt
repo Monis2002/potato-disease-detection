@@ -1,6 +1,6 @@
 protobuf==4.23.4
 joblib==1.2.0
-numpy==1.24.3s
+numpy==1.24.3
 tensorflow==2.15.0
 
 
