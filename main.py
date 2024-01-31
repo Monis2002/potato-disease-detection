@@ -3,7 +3,7 @@ import os
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.models import load_model
 import tensorflow as tf
-import joblib as jb
+
 import base64
 import numpy as np
 
@@ -23,7 +23,12 @@ def predict(model, img):
     confidence = round(100 * (np.max(predictions[0])), 2)
     return predicted_class, confidence
 
-model=load_model('model_50_epochs')
+@st.cache_data
+def Load_Model():
+  model=load_model('model_50_epochs')
+  return model
+
+model=Load_Model()
 
 def set_bg_hack(main_bg):
    '''
@@ -80,11 +85,11 @@ def save_file(img):
         return 0
 
 # Web Devlopment
-st.markdown(f'<h1 style="color:black;font-size:64px;">{"Potato Prediction"}</h1>', unsafe_allow_html=True)
+st.markdown(f'<h1 style="color:black;font-size:64px;">{"Potato Leaf Care"}</h1>', unsafe_allow_html=True)
 
-input_type=st.selectbox('Type',['Upload from Gallery','Upload by Camer'])
+input_type=st.selectbox('Type',['Upload from Gallery','Upload by Camera'])
 
-if input_type=='Upload by Cammer':
+if input_type=='Upload by Camera':
     uploaded_img = st.camera_input("Take a picture")
 
 else:
