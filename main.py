@@ -70,28 +70,28 @@ def predict(model, img):
 #
 #
 #
-#
-# def save_file(img):
-#     try:
-#         with open(os.path.join('uploaded',img.name),'wb') as f:
-#             f.write(img.getbuffer())
-#         return 1
-#     except:
-#         return 0
-#
-# # Web Devlopment
-# st.markdown(f'<h1 style="color:black;font-size:64px;">{"Potato Prediction"}</h1>', unsafe_allow_html=True)
-#
-# input_type=st.selectbox('Type',['Upload from Gallery','Upload by Cammer'])
-#
-# if input_type=='Upload by Cammer':
-#     uploaded_img = st.camera_input("Take a picture")
-#
-# else:
-#     uploaded_img = st.file_uploader('Upload Image')
-#
-#
-#
+
+def save_file(img):
+    try:
+        with open(os.path.join('uploaded',img.name),'wb') as f:
+            f.write(img.getbuffer())
+        return 1
+    except:
+        return 0
+
+# Web Devlopment
+st.markdown(f'<h1 style="color:black;font-size:64px;">{"Potato Prediction"}</h1>', unsafe_allow_html=True)
+
+input_type=st.selectbox('Type',['Upload from Gallery','Upload by Cammer'])
+
+if input_type=='Upload by Cammer':
+    uploaded_img = st.camera_input("Take a picture")
+
+else:
+    uploaded_img = st.file_uploader('Upload Image')
+
+
+
 # if uploaded_img is not None:
 #     st.write('# Image Uploaded')
 #
