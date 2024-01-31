@@ -1,6 +1,6 @@
-protobuf==2.11.0
+protobuf==2.4.1
 joblib==1.2.0
 numpy==1.24.3
 tensorflow==2.15.0
-tensorflow-protobuf==2.11.0
+
 
