@@ -92,21 +92,21 @@ else:
 
 
 
-# if uploaded_img is not None:
-#     st.write('# Image Uploaded')
-#
-#     if save_file(uploaded_img):
-#
-#         img = image.load_img(os.path.join('uploaded',uploaded_img.name), target_size=(256, 256))
-#         st.image(img)
-#         img_array = image.img_to_array(img)
-#         img_tf = tf.convert_to_tensor(img_array)
-#         class_,confidence=predict(model,img_tf)
-#
-#         st.write("## Potato Type : ",class_)
-#         st.write("## Confidence : ", confidence)
-#     else:
-#         st.write('Error')
+if uploaded_img is not None:
+    st.write('# Image Uploaded')
+
+    if save_file(uploaded_img):
+
+        img = image.load_img(os.path.join('uploaded',uploaded_img.name), target_size=(256, 256))
+        st.image(img)
+        img_array = image.img_to_array(img)
+        img_tf = tf.convert_to_tensor(img_array)
+        class_,confidence=predict(model,img_tf)
+
+        st.write("## Potato Type : ",class_)
+        st.write("## Confidence : ", confidence)
+    else:
+        st.write('Error')
 
 st.write("# Monis")
 
