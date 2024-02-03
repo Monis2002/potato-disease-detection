@@ -98,7 +98,8 @@ else:
 
 
 if uploaded_img is not None:
-    st.write('# Image Uploaded')
+
+    st.markdown(f'<h1 style="color:black;">{"Image Uploaded"}</h1>', unsafe_allow_html=True)
 
     if save_file(uploaded_img):
 
@@ -108,8 +109,13 @@ if uploaded_img is not None:
         img_tf = tf.convert_to_tensor(img_array)
         class_,confidence=predict(model,img_tf)
 
-        st.write("## Potato Type : ",class_)
-        st.write("## Confidence : ", confidence)
+        if confidence>50:
+            st.markdown(f'<h2 style="color:black;">Potato Type={class_}</h2>', unsafe_allow_html=True)
+            st.markdown(f'<h2 style="color:black;">Confidence=<spam style="color:green;">{confidence}</spam></h2>', unsafe_allow_html=True)
+        else:
+            st.markdown(f'<h2 style="color:black;">Potato Type={class_}</h2>', unsafe_allow_html=True)
+            st.markdown(f'<h2 style="color:black;">Confidence=<spam style="color:red;">{confidence}</spam></h2>',unsafe_allow_html=True)
+
     else:
         st.write('Error')
 
