@@ -61,7 +61,7 @@ page_bg="""
 <style>
 
 
-    [data-testid="block-container"]{
+    [data-testid="stVerticalBlock"]{
         background-color: #EEEDEB;
         opacity: 0.85;
     }
