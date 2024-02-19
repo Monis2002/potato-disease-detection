@@ -60,7 +60,8 @@ set_bg_hack('potato.jpg')
 page_bg="""
 <style>
 
-    [data-testid="block-container"]{
+
+    [data-testid="stVerticalBlock"]{
         background-color: #EEEDEB;
         opacity: 0.85;
     }
@@ -68,8 +69,10 @@ page_bg="""
     [data-testid="stHeader"]{
         background-color:rgba(0,0,0,0)
     }
+    
 </style>
 """
+# data-testid="block-container"
 st.markdown(page_bg,unsafe_allow_html=True)
 
 
